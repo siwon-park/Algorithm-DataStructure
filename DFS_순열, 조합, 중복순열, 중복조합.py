@@ -8,8 +8,8 @@ def permute(elements,arr):
         result.append(arr[:])
         return
     for i in elements:
-        left_elements=elements[:]
-        left_elements.remove(i)
+        left_elements=elements[:] #기존 배열을 복사
+        left_elements.remove(i) #복사한 새 배열에서 i를 제거
         permute(left_elements,arr+[i])
 permute([1,2,3],[])
 print(result) #[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
@@ -24,7 +24,7 @@ def combine(start,k,arr):
         result.append(arr[:])
         return
     for i in range(start,n):
-        combine(i+1,k-1,arr+[elements[i]])
+        combine(i+1,k-1,arr+[elements[i]]) #i+1을 하여 이미 뽑은 요소를 못 뽑아 중복을 피함
 combine(0,3,[])
 print(result) #[[2, 4, 5], [2, 4, 8], [2, 5, 8], [4, 5, 8]]
 
@@ -58,6 +58,6 @@ def combine_with_replacement(start,k,arr):
         result.append(arr[:])
         return
     for i in range(start,n):
-        combine_with_replacement(i,k-1,arr+[elements[i]])
+        combine_with_replacement(i,k-1,arr+[elements[i]]) #중복은 허락하되, 순서가 다른 것은 허락하지 않으므로 이미 뽑았던 요소의 인덱스 i에서 출발
 combine_with_replacement(0,2,[])
 print(result) #[[2, 2], [2, 4], [2, 9], [4, 4], [4, 9], [9, 9]]
