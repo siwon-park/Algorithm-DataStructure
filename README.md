@@ -1,0 +1,44 @@
+# VScode에서 Python 32bit 가상 환경 구축하기
+1. Python 32bit 설치(64bit가 설치되어 있다면 가급적 다른 버전으로 설치하는 걸 추천)
+```
+설치 시, 64bit 파이썬과 설치 경로를 달리하기 위해 Customize Installation을 선택하고 next를 누른 뒤, Install for all Users를 반드시 체크한다.
+(이 때, 설치 경로가 C:\Program Files (x86)\Python{XX}-32로 변경될 것임. 여기서 XX는 버전이 들어감 예를 들어, 3.10.버전이면 310, 3.9버전이면 39)
+```
+
+2. 가상 환경 구축하기
+```
+VScode에서 터미널(Cmd)을 실행시키고 다음과 같이 가상환경을 구축한다.
+    python -m venv virtualenv 
+    # python -m venv 가상환경 이름
+```
+
+3. 가상환경 인터프리터 경로 변경 및 설정
+```
+이대로 그냥 activate를 하면 64비트가 설치되어 있을 경우 64비트 파이썬 가상환경이 구축된다.
+일단 만들어진 가상환경 폴더에 들어가면 'pyenv'라는 cfg파일이 보일 것이다.
+해당 파일을 VScode를 통해 열면 아래와 같이 3가지 항목이 나오는데,
+
+home = {파이썬 설치 경로}
+include-system-site-packages = false
+version = {파이썬 32bit 버전}
+
+여기서 home에 있는 {파이썬 설치 경로}를 32비트 파이썬 설치 경로를 수정해주면 된다. (아마 64bit가 설치되어 있을 경우 Default값이 64bit 설치 폴더 경로일 것임)
+예) C:\Program Files (x86)\Python38-32
+
+그 다음, Ctrl+Shift+P를 눌러 인터프리터를 지정해준다.(Enter interpreter path...)
+가상환경의 Scripts폴더 내 python.exe를 선택
+
+VScode를 종료 후, 관리자 권한으로 실행
+```
+
+4. 가상환경 Activate/Deactivate하기
+```
+cd 가상환경 폴더이름\Scripts\activate.bat
+#예시) cd virtualenv\Scripts\activate.bat
+※만약 터미널이 PowerShell이라면 ps1파일을 실행시키면됨
+
+성공했다면 터미널에 나오는 경로의 이름 앞에 '(가상환경 이름)'이 붙어져 있을 것임.
+VScode의 좌측 하단에 나오는 파이썬 인터프리터 끝에도 (가상환경 이름)이 붙어져 있음
+
+가상환경에서 빠져나오고 싶을 땐, activate했던 경로와 같은 곳으로 들어가서, deactivate파일을 실행시켜주면 됨.
+```
