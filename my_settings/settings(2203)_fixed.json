@@ -1,0 +1,56 @@
+{
+    //SSAFY추가 시작 부분
+    "editor.tabSize": 2,
+    // python
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "python.languageServer": "Pylance",
+    "python.analysis.extraPaths": [
+        "./sources"
+    ],
+    "window.zoomLevel": 2,
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    // Django 설정 추가(22.03.02)
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Atom One Dark",
+    // 여기서부터 내가 수정함
+    // Atom One Dark Color Theme function-call 색 수정(선언할 때랑 똑같이 파랑색으로 바꿈)(22.03.05)
+    "editor.tokenColorCustomizations": {
+        "[Atom One Dark]": {
+            "textMateRules": [
+                {
+                    "scope": [
+                        "meta.function-call.generic.python",
+                        // "meta.function-call.object",
+                        // "meta.function-call.static",
+                    ],
+                    "settings": {
+                        "foreground": "#61AFEF",
+                    }
+                }
+            ]
+        }
+    }
+}
