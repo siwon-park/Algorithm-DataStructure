@@ -32,7 +32,6 @@ print(ret2, len(ret2)) # [[], [1], [1, 2], [1, 2, 4], [1, 4], [2], [2, 4], [3], 
 arr = 'ABCD'
 N = len(arr)
 for subset in range(1 << N): # 중복을 방지하려면 (1 << (N - 1))
-    cnt = 0
     A, B = [], []
     for i in range(N):
         if subset & (1 << i):
