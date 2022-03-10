@@ -27,3 +27,18 @@ for i in range(1<<N):
 
 ret2.sort()
 print(ret2, len(ret2)) # [[], [1], [1, 2], [1, 2, 4], [1, 4], [2], [2, 4], [3], [3, 1], [3, 1, 2], [3, 1, 2, 4], [3, 1, 4], [3, 2], [3, 2, 4], [3, 4], [4]] 16
+
+# 비트 연산 활용 예시)
+arr = 'ABCD'
+N = len(arr)
+for subset in range(1 << N): # 중복을 방지하려면 (1 << (N - 1))
+    cnt = 0
+    A, B = [], []
+    for i in range(N):
+        if subset & (1 << i):
+            A.append(arr[i])
+        else:
+            B.append(arr[i])
+
+    if len(A) == len(B):
+        print(A, B)
