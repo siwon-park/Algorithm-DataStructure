@@ -1,15 +1,16 @@
 # 중복 순열(Products)
 arr = [1, 2, 3]
 N = len(arr)
-
 ret = []
+
 
 def products(k, lst):
     if k == N:
         ret.append(lst)
         return
     for i in range(N):
-        products(k+1, lst+[arr[i]])
+        products(k + 1, lst + [arr[i]])
+
 
 products(0, [])
 print(ret)  # [[1, 1, 1], [1, 1, 2], [1, 1, 3], 

@@ -21,6 +21,7 @@ N = 4
 A = [0] # 중복을 제거하려면 A에 [0]을 넣고 시작
 B = []
 
+
 def subset(k):
     if k == N:
         if len(A) == len(B):
@@ -29,11 +30,12 @@ def subset(k):
     else:
         # k를 A에 포함시키는 경우
         A.append(k)
-        subset(k+1)
+        subset(k + 1)
         A.pop()
         # k를 B에 포함시키는 경우
         B.append(k)
-        subset(k+1)
+        subset(k + 1)
         B.pop()
+
 
 subset(1) # A에 0을 넣고 시작했으므로, subset을 만들 때 1부터 넣게 1부터 출발시킴
