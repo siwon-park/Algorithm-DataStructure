@@ -230,7 +230,33 @@ inorder(1) # 8 4 9 2 10 5 1 6 3 7
 postorder(1) # 8 9 4 10 5 2 6 7 3 1
 ```
 
+<br>
 
+### 다른 순회 결과를 통한 순회 조회하기
+
+- 전위 순회와 중위 순회를 알고 있을 때, 후위 순회를 알 수 있다.
+- 후위 순회와 중위 순회를 알고 있을 때, 전위 순회를 알 수 있다.
+- 그러나, 전위 순회와 후위 순회를 알고 있다고 해서 올바른 중위 순회를 알아 낼 수 있음을 보장하지 않는다.
+
+![image](https://user-images.githubusercontent.com/93081720/230100133-680d2385-5379-4a0d-b29e-c1ca734ce9a1.png)
+
+루트와 왼쪽 서브 트리, 오른쪽 서브 트리의 위치를 이용해 재귀적으로 호출하여 순회의 결과를 찾을 수 있다.
+
+#### 중위 순회, 전위 순회를 통해 후위 순회 찾기
+
+![image](https://user-images.githubusercontent.com/93081720/230112430-551b1f37-4120-4b38-968e-85f0b0f05b87.png)
+
+![image](https://user-images.githubusercontent.com/93081720/230115303-d9d8f702-870a-430d-9013-7bea10d74614.png)
+
+<br>
+
+#### 중위 순회, 후위 순회를 통해 전위 순회 찾기
+
+![image](https://user-images.githubusercontent.com/93081720/230112339-b346ce4d-f8be-496f-b973-f7f0d404f0f6.png)
+
+![image](https://user-images.githubusercontent.com/93081720/230116441-0a92c542-8b00-4494-a0b5-02cbfa50c20a.png)
+
+<br>
 
 ## 6. 이진 탐색 트리(Binary Search Tree)
 
