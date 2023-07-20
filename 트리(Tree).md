@@ -131,7 +131,9 @@ def subtree_size(v):
 
 > 루트(V) → 왼쪽(L) → 오른쪽(R), VLR
 
-![image](https://user-images.githubusercontent.com/93081720/158604456-076a2915-c5b5-4e6f-88e3-49c4a8dfdf45.png)
+| 구조                                                         | 순회 순서                                                    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![image](https://user-images.githubusercontent.com/93081720/158604456-076a2915-c5b5-4e6f-88e3-49c4a8dfdf45.png) | ![image](https://github.com/siwon-park/Problem_Solving/assets/93081720/55fc52a1-7363-4d29-9dad-0bd462968be5) |
 
 #### 순회 방법 
 
@@ -151,7 +153,9 @@ preorder(1) # 1 2 4 8 9 5 10 3 6 7
 
 > 왼쪽(L) → 루트(V) → 오른쪽(R), LVR
 
-![image](https://user-images.githubusercontent.com/93081720/158604737-7a17b84e-f197-43ff-95f3-52eed76ceecd.png)
+| 구조                                                         | 순회 순서                                                    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![image](https://user-images.githubusercontent.com/93081720/158604737-7a17b84e-f197-43ff-95f3-52eed76ceecd.png) | ![image](https://github.com/siwon-park/Problem_Solving/assets/93081720/8a464788-36b3-4679-b6a4-05b8e4f01ea2) |
 
 #### 순회 방법
 
@@ -171,7 +175,9 @@ inorder(1) # 8 4 9 2 10 5 1 6 3 7
 
 > 왼쪽(L) → 오른쪽(R) → 루트(V), LRV
 
-![image](https://user-images.githubusercontent.com/93081720/158604908-f37647e3-00a9-4391-b09e-4226ac5b4dec.png)
+| 구조                                                         | 순회 순서                                                    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![image](https://user-images.githubusercontent.com/93081720/158604908-f37647e3-00a9-4391-b09e-4226ac5b4dec.png) | ![image](https://github.com/siwon-park/Problem_Solving/assets/93081720/919a539e-a977-4ab0-8351-9e0c34127533) |
 
 #### 순회 방법
 
