@@ -1,5 +1,7 @@
 # BFS (너비 우선 탐색)
 
+BFS 탐색
+
 ## 1. BFS 전제 조건
 
 > 모든 간선의 가중치가 동일해야 한다
@@ -16,7 +18,35 @@ BFS에도 전제 조건이 있다. `"모든 간선이 동일한 가중치를 가
 
 <br>
 
-## 2. BFS 문제 CASE
+## 2. BFS 탐색 팁 및 유용한 스킬
+
+### 1) 8방향 탐색
+
+BFS 탐색 시, 주변을 탐색하기 위해 `dy`, `dx`라는 배열을 이용해서 원하는 방향으로 탐색하곤 한다.
+
+4방향 탐색 시에는 간단하지만, 8방향 탐색 시에는 배열에 값을 잘못 지정하는 실수를 범할 가능성이 높다.
+
+이 때, 굳이 8방향으로 지정하지 않고 2중 for문을 통해서 8방향 범위를 탐색하는 방법도 존재한다.
+
+|                    크기가 8인 배열을 이용                    |                       2중 for문을 이용                       |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| ![image](https://github.com/siwon-park/Algorithm-DataStructure/assets/93081720/076dbac1-a69b-4741-b6e7-fcaae996b39f) | ![image](https://github.com/siwon-park/Algorithm-DataStructure/assets/93081720/cb433c4f-4d2c-466b-909e-d0b2a41d2e74) |
+
+이렇게 되는 이유는 생각보다 엄청 간단한데, 바로 탐색의 범위의 시작과 끝이 기준점의 좌측 대각, 우측 대각이기 때문이다.
+
+<img src="https://github.com/siwon-park/Algorithm-DataStructure/assets/93081720/008bf92d-12ff-4d52-b0cf-5aeba5f10bad" referrerpolicy="no-referrer" alt="image" width="250px">
+
+2중 for문을 이용해서 8방향 탐색 시, 범위를 벗어나는 것도 체크하기 쉽다.
+
+크기가 8인 배열을 이용해서 8방향을 탐색한다면, 루프마다 8번씩 체크해야 하지만, 2중 for문을 사용할 경우 미리 범위를 지정해서 처음에 한 번만 체크하고 넘어가면 된다.
+
+| 크키가 8인 배열 이용 시 범위 체크                            | 2중 for문 이용 시 범위 체크                                  | 2중 for문 이용 시 범위 체크                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![image](https://github.com/siwon-park/Algorithm-DataStructure/assets/93081720/4b5c1d4b-1a4b-47ce-9320-d5923b12cc30) | ![image](https://github.com/siwon-park/Algorithm-DataStructure/assets/93081720/d2a3c294-b70c-4fd8-91ff-87801cd0f000) | ![image](https://github.com/siwon-park/Algorithm-DataStructure/assets/93081720/744a33ad-4d8c-46e5-a31f-199f3046b56f) |
+
+<br>
+
+## 3. BFS 문제 CASE
 
 > BFS 문제 풀이 시 팁 서술 (각 케이스별로 나눠서 서술)
 
