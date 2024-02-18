@@ -13,6 +13,18 @@ class SegmentTree {
         int mid = (s + e) / 2;
         return tree[n] = init(s, mid, n * 2) + init(mid + 1, e, n * 2 + 1);
     }
+    
+    // 초기화 연산2 -> init()과 동일
+    void init2(int s, int e, int n) {
+        if (s == e) {
+            tree[n] = arr[s];
+            return; // init의 반환값이 void일 때는 반드시 return을 해줘야 함 -> if절 아래를 호출하면 안 되기 때문
+        }
+        int mid = (s + e) / 2;
+        init2(s, mid, n * 2);
+        init2(mid + 1, e, n * 2 + 1);
+        tree[n] = tree[n * 2] + tree[n * 2 + 1];
+    }
 
     // 업데이트 연산1 -> 업데이트 연산2와 동일함
     int update(int s, int e, int n, int idx, int val) {
