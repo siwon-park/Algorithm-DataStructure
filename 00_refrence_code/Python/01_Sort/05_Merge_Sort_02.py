@@ -1,5 +1,5 @@
 # 병합 정렬(리스트 형태 반환)
-def merge_sort(lst):
+def merge_sort(lst: list) -> list:
     n = len(lst)
     if n == 1:
         return lst
@@ -8,7 +8,8 @@ def merge_sort(lst):
     right = merge_sort(lst[mid:])
     return merge(left, right)
 
-def merge(left, right):
+
+def merge(left: list, right: list) -> list:
     merged = []
     i, j = 0, 0
     l, r = len(left), len(right)
@@ -22,6 +23,7 @@ def merge(left, right):
     merged += left[i:]
     merged += right[j:]
     return merged
+
 
 arr = [69, 10, 30, 2, 16, 8, 31, 22, 2]
 arr = merge_sort(arr)

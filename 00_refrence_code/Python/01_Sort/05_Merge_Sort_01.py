@@ -5,9 +5,9 @@ def merge_sort(s, e):
         return
     mid = (s + e) // 2
     merge_sort(s, mid) # 왼쪽은 mid까지 포함
-    merge_sort(mid+1, e) # 오른쪽은 mid+1부터
+    merge_sort(mid + 1, e) # 오른쪽은 mid+1부터
 
-    i, j, k = s, mid+1, s
+    i, j, k = s, mid + 1, s  # k = 0부터 시작하면, 맨 아래는 arr[i] = tmp[i - s]로 변경하면 됨.
     while i <= mid and j <= e:
         if arr[i] < arr[j]:
             tmp[k] = arr[i]
@@ -26,11 +26,12 @@ def merge_sort(s, e):
         j += 1
         k += 1
     
-    for i in range(s, e+1):
+    for i in range(s, e + 1):
         arr[i] = tmp[i]
+
 
 arr = [69, 10, 30, 2, 16, 8, 31, 22, 2]
 N = len(arr)
 tmp = [0] * N
-merge_sort(0, N-1)
+merge_sort(0, N - 1)
 print(arr)
