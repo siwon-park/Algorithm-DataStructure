@@ -1,6 +1,7 @@
 # 세그먼트 트리 구현
 import math
 
+
 class SegmentTree:
 
     tree = None
